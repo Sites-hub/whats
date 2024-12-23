@@ -1,0 +1,200 @@
+<body>
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
+</body>
+
+<style>
+  /* Reset básico */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+    padding: 20px;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007BFF;
+  }
+
+  form {
+    max-width: 500px;
+    background: white;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  input:focus, select:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      padding: 10px;
+    }
+
+    form {
+      padding: 15px;
+    }
+
+    h1 {
+      font-size: 22px;
+    }
+  }
+
+  /* Estilização do título */
+  .form-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FF5722;
+    background-color: #FFF3E0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 0 auto 20px;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Botão de pagamento com Pix */
+  .pay-with-pix-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50; /* Cor verde para o Pix */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+    opacity: 0.5;  /* Inicialmente desabilitado */
+    pointer-events: none;  /* Impede clicar no botão quando desabilitado */
+  }
+
+  .pay-with-pix-button:hover {
+    background-color: #45a049;
+  }
+
+  .pay-with-pix-button.enabled {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+</style>
+
+<!-- Formulário -->
+<div>
+  <form id="form-checkout">
+    <!-- Título do Produto dentro do formulário -->
+    <div class="form-title">
+      Detector de WhatsApp R$29,90
+    </div>
+  
+    <div>
+      <label for="payerFirstName">Nome</label>
+      <input id="form-checkout__payerFirstName" name="payerFirstName" type="text" required>
+    </div>
+    <div>
+      <label for="payerLastName">Sobrenome</label>
+      <input id="form-checkout__payerLastName" name="payerLastName" type="text" required>
+    </div>
+    <div>
+      <label for="email">E-mail</label>
+      <input id="form-checkout__email" name="email" type="email" required>
+    </div>
+    <div>
+      <label for="phone">Telefone</label>
+      <input id="form-checkout__phone" name="phone" type="text" required placeholder="Digite o número de telefone" maxlength="15">
+    </div>
+
+    <!-- Link para pagamento com Pix dentro do formulário -->
+    <div>
+      <a href="https://mpago.la/2crEVhz" target="_blank">
+        <button class="pay-with-pix-button" type="button" id="payWithPixButton">Pagar com Pix</button>
+      </a>
+    </div>
+  </form>
+</div>
+
+<!-- Script para aplicar máscara de telefone -->
+<script>
+  document.getElementById('form-checkout__phone').addEventListener('input', function(event) {
+    let value = event.target.value.replace(/\D/g, '');  // Remove todos os caracteres não numéricos
+
+    // Aplica a máscara de telefone (formato: (XX) XXXXX-XXXX)
+    if (value.length <= 11) {
+      value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+    }
+
+    event.target.value = value;
+  });
+
+  // Função para validar se todos os campos estão preenchidos
+  function validateForm() {
+    const payerFirstName = document.getElementById('form-checkout__payerFirstName').value;
+    const payerLastName = document.getElementById('form-checkout__payerLastName').value;
+    const email = document.getElementById('form-checkout__email').value;
+    const phone = document.getElementById('form-checkout__phone').value;
+    
+    const button = document.getElementById('payWithPixButton');
+    
+    // Verifica se todos os campos obrigatórios estão preenchidos
+    if (payerFirstName && payerLastName && email && phone) {
+      button.classList.add('enabled');  // Habilita o botão
+    } else {
+      button.classList.remove('enabled');  // Desabilita o botão
+    }
+  }
+
+  // Chama a validação quando o usuário digitar nos campos
+  document.querySelectorAll('input').forEach(input => {
+    input.addEventListener('input', validateForm);
+  });
+
+  // Chama a validação inicial
+  validateForm();
+</script>
