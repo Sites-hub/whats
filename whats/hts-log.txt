@@ -1,0 +1,33 @@
+HTTrack3.49-2+htsswf+htsjava launched on Mon, 23 Dec 2024 03:23:30 at https://whatsdetect.org/nf-ggads/?src=ads2&gad_source=1&gclid=CjwKCAiAjp-7BhBZEiwAmh9rBW9Pur-Y0BrMf5KBwY1gRZGDyqeJc4nYfd8fsimoRrz15d4BBhbABBoCfOMQAvD_BwE +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qYC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "pt_BR, en, *" -Y https://whatsdetect.org/nf-ggads/?src=ads2&gad_source=1&gclid=CjwKCAiAjp-7BhBZEiwAmh9rBW9Pur-Y0BrMf5KBwY1gRZGDyqeJc4nYfd8fsimoRrz15d4BBhbABBoCfOMQAvD_BwE -O1 "C:\Meus Sites\whats" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+03:23:46	Error: 	"Not Found" (404) at link https://whatsdetect.org/nf-ggads/assets/webfonts/fa-brands-400.eot (from https://whatsdetect.org/nf-ggads/assets/all.min.css)
+03:23:46	Error: 	"Not Found" (404) at link https://whatsdetect.org/nf-ggads/assets/webfonts/fa-brands-400.woff (from https://whatsdetect.org/nf-ggads/assets/all.min.css)
+03:23:46	Error: 	"Not Found" (404) at link https://whatsdetect.org/nf-ggads/assets/webfonts/fa-brands-400.ttf (from https://whatsdetect.org/nf-ggads/assets/all.min.css)
+03:23:46	Error: 	"Not Found" (404) at link https://whatsdetect.org/nf-ggads/assets/webfonts/fa-brands-400.svg (from https://whatsdetect.org/nf-ggads/assets/all.min.css)
+03:23:46	Error: 	"Not Found" (404) at link https://whatsdetect.org/nf-ggads/assets/webfonts/fa-regular-400.eot (from https://whatsdetect.org/nf-ggads/assets/all.min.css)
+03:23:46	Error: 	"Not Found" (404) at link https://whatsdetect.org/nf-ggads/assets/webfonts/fa-regular-400.woff (from https://whatsdetect.org/nf-ggads/assets/all.min.css)
+03:23:46	Error: 	"Not Found" (404) at link https://whatsdetect.org/nf-ggads/assets/webfonts/fa-regular-400.ttf (from https://whatsdetect.org/nf-ggads/assets/all.min.css)
+03:23:46	Error: 	"Not Found" (404) at link https://whatsdetect.org/nf-ggads/assets/webfonts/fa-regular-400.svg (from https://whatsdetect.org/nf-ggads/assets/all.min.css)
+03:23:46	Error: 	"Not Found" (404) at link https://whatsdetect.org/nf-ggads/assets/webfonts/fa-solid-900.eot (from https://whatsdetect.org/nf-ggads/assets/all.min.css)
+03:23:46	Error: 	"Not Found" (404) at link https://whatsdetect.org/nf-ggads/assets/webfonts/fa-solid-900.svg (from https://whatsdetect.org/nf-ggads/assets/all.min.css)
+03:23:46	Error: 	"Not Found" (404) at link https://whatsdetect.org/nf-ggads/fonts/fontawesome-webfont.eot (from https://whatsdetect.org/nf-ggads/assets/font-awesome.min.css)
+03:23:46	Error: 	"Not Found" (404) at link https://whatsdetect.org/nf-ggads/fonts/fontawesome-webfont.woff (from https://whatsdetect.org/nf-ggads/assets/font-awesome.min.css)
+03:23:46	Error: 	"Not Found" (404) at link https://whatsdetect.org/nf-ggads/fonts/fontawesome-webfont.ttf (from https://whatsdetect.org/nf-ggads/assets/font-awesome.min.css)
+03:23:46	Error: 	"Not Found" (404) at link https://whatsdetect.org/nf-ggads/fonts/fontawesome-webfont.svg (from https://whatsdetect.org/nf-ggads/assets/font-awesome.min.css)
+03:24:03	Error: 	"Not Found" (404) at link https://whatsdetect.org/nf-ggads/assets/concluido/07.jpg (from https://whatsdetect.org/nf-ggads/concluido.html)
+03:24:03	Error: 	"Not Found" (404) at link https://whatsdetect.org/nf-ggads/assets/concluido/materialdesignicons-webfont2f9b.eot?v=4.4.95 (from https://whatsdetect.org/nf-ggads/assets/concluido/materialdesignicons.min.css)
+03:24:03	Error: 	"Not Found" (404) at link https://whatsdetect.org/nf-ggads/assets/concluido/materialdesignicons-webfontd41d.eot? (from https://whatsdetect.org/nf-ggads/assets/concluido/materialdesignicons.min.css)
+03:24:03	Error: 	"Not Found" (404) at link https://whatsdetect.org/nf-ggads/assets/concluido/materialdesignicons-webfont2f9b.woff?v=4.4.95 (from https://whatsdetect.org/nf-ggads/assets/concluido/materialdesignicons.min.css)
+03:24:03	Error: 	"Not Found" (404) at link https://whatsdetect.org/nf-ggads/assets/concluido/materialdesignicons-webfont2f9b.ttf?v=4.4.95 (from https://whatsdetect.org/nf-ggads/assets/concluido/materialdesignicons.min.css)
+03:24:03	Error: 	"Not Found" (404) at link https://espiaoinvisivel.com/v5/concluido/assets/images/bg/login-1.jpg (from https://whatsdetect.org/nf-ggads/assets/concluido/apps.css)
+03:24:03	Error: 	"Not Found" (404) at link https://espiaoinvisivel.com/v5/concluido/assets/images/bg/login-2.jpg (from https://whatsdetect.org/nf-ggads/assets/concluido/apps.css)
+03:24:03	Error: 	"Not Found" (404) at link https://espiaoinvisivel.com/v5/concluido/assets/images/bg/login-3.jpg (from https://whatsdetect.org/nf-ggads/assets/concluido/apps.css)
+
+HTTrack Website Copier/3.49-2 mirror complete in 33 seconds : 110 links scanned, 85 files written (3937482 bytes overall) [1605344 bytes received at 48646 bytes/sec], 2927705 bytes transferred using HTTP compression in 80 files, ratio 15%, 6.9 requests per connection
+(22 errors, 0 warnings, 0 messages)
