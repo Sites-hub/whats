@@ -213,6 +213,25 @@ h2.card-title.font-bold.text-2xl {
         </video>
     </div>
     
+<script>
+    // Desabilita o controle de busca do vídeo
+    var video = document.getElementById('meu-video');
+
+    video.addEventListener('loadedmetadata', function() {
+        video.currentTime = 0; // Inicia o vídeo sempre do começo
+    });
+
+    // Impede que o usuário altere a posição do vídeo
+    video.addEventListener('seeking', function() {
+        video.currentTime = video.duration; // Define a posição de volta ao final
+    });
+
+    video.addEventListener('timeupdate', function() {
+        if (video.currentTime < 0) {
+            video.currentTime = 0; // Garante que o vídeo não possa ir para trás
+        }
+    });
+</script>
 
 <style type="text/css">
     .hide {
