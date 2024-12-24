@@ -213,9 +213,10 @@ h2.card-title.font-bold.text-2xl {
 
       
     
+   
     
-      <div id="videoContainer" style="position:relative;padding-top:56.25%;border-radius: 15px;overflow: hidden;">
-        <video id="meuVideo" muted style="border:none;position:absolute;top:0;left:0;width:100%;height:100%;" fetchpriority="high">
+    <div id="videoContainer" style="position:relative;padding-top:56.25%;border-radius: 15px;overflow: hidden;">
+        <video id="meuVideo" style="border:none;position:absolute;top:0;left:0;width:100%;height:100%;" fetchpriority="high">
             <source src="panda.mp4" type="video/mp4">
             Seu navegador não suporta a tag de vídeo.
         </video>
@@ -242,16 +243,13 @@ h2.card-title.font-bold.text-2xl {
             }
         }
     
-        // Garantir que o vídeo comece assim que o DOM estiver carregado
+        // Garantir que o botão de Play/Pause apareça ao carregar a página
         document.addEventListener("DOMContentLoaded", function() {
             var video = document.getElementById("meuVideo");
             var button = document.getElementById("playPauseButton");
     
-            video.play();  // Começa a reprodução automaticamente
-            video.muted = false; // Remover o muted depois que o vídeo começar
-    
-            // Esconde o botão ao começar o vídeo
-            button.style.display = 'none';  
+            // Exibe o botão de Play/Pause ao carregar a página
+            button.style.display = 'block';
         });
     
         // Detecta quando o vídeo for pausado e faz o botão aparecer novamente
@@ -261,6 +259,8 @@ h2.card-title.font-bold.text-2xl {
             button.innerHTML = '▶️'; // Mostra o ícone de play
         });
     </script>
+    
+    
     
     
     
