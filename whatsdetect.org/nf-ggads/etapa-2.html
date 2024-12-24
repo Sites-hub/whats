@@ -150,7 +150,12 @@ h2.card-title.font-bold.text-2xl {
     font-weight: 700; 
     font-size: 20px;
 }
+
+
 </style>
+
+
+
 
 <div class="elementor-spacer">
       <div class="elementor-spacer-inner"></div>
@@ -206,32 +211,72 @@ h2.card-title.font-bold.text-2xl {
         <div style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px); background: #000; border-radius: 10px;"></div> 
       </div>  -->
 
-      <div style="position:relative;padding-top:56.25%;border-radius: 15px;overflow: hidden;">
-        <video controls style="border:none;position:absolute;top:0;left:0;width:100%;height:100%;" fetchpriority="high">
+      
+    
+    
+      <div id="videoContainer" style="position:relative;padding-top:56.25%;border-radius: 15px;overflow: hidden;">
+        <video id="meuVideo" muted style="border:none;position:absolute;top:0;left:0;width:100%;height:100%;" fetchpriority="high">
             <source src="panda.mp4" type="video/mp4">
             Seu navegador não suporta a tag de vídeo.
         </video>
+        <!-- Botão de Play/Pause sobre o vídeo -->
+        <button id="playPauseButton" onclick="togglePlayPause()" 
+                style="position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);font-size:24px;background:rgba(0,0,0,0.5);color:white;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;">
+            ▶️
+        </button>
     </div>
     
-<script>
-    // Desabilita o controle de busca do vídeo
-    var video = document.getElementById('meu-video');
-
-    video.addEventListener('loadedmetadata', function() {
-        video.currentTime = 0; // Inicia o vídeo sempre do começo
-    });
-
-    // Impede que o usuário altere a posição do vídeo
-    video.addEventListener('seeking', function() {
-        video.currentTime = video.duration; // Define a posição de volta ao final
-    });
-
-    video.addEventListener('timeupdate', function() {
-        if (video.currentTime < 0) {
-            video.currentTime = 0; // Garante que o vídeo não possa ir para trás
+    <script>
+        // Função para alternar entre play e pause
+        function togglePlayPause() {
+            var video = document.getElementById("meuVideo");
+            var button = document.getElementById("playPauseButton");
+    
+            if (video.paused) {
+                video.play();  // Começa a reprodução do vídeo
+                button.style.display = 'none'; // Esconde o botão de play
+            } else {
+                video.pause();  // Pausa o vídeo
+                button.style.display = 'block'; // Mostra o botão de play/pause novamente
+                button.innerHTML = '▶️'; // Mostra o ícone de play
+            }
         }
-    });
-</script>
+    
+        // Garantir que o vídeo comece assim que o DOM estiver carregado
+        document.addEventListener("DOMContentLoaded", function() {
+            var video = document.getElementById("meuVideo");
+            var button = document.getElementById("playPauseButton");
+    
+            video.play();  // Começa a reprodução automaticamente
+            video.muted = false; // Remover o muted depois que o vídeo começar
+    
+            // Esconde o botão ao começar o vídeo
+            button.style.display = 'none';  
+        });
+    
+        // Detecta quando o vídeo for pausado e faz o botão aparecer novamente
+        document.getElementById("meuVideo").addEventListener("pause", function() {
+            var button = document.getElementById("playPauseButton");
+            button.style.display = 'block'; // Mostra o botão de play/pause
+            button.innerHTML = '▶️'; // Mostra o ícone de play
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+   
+    
+    
+
+      
+      
+     
+    
 
 <style type="text/css">
     .hide {
